@@ -14,7 +14,11 @@ class SongsController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $songs = Song::all();
+        
+        return view('index', [
+            'songs' => $songs
+        ]);
     }
 
     /**
@@ -35,7 +39,18 @@ class SongsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $song = Song::create([
+            'numero' => $request->input('numero'),
+            'refrain' => $request->input('refrain'),
+            'titre' => $request->input('titre'),
+            'couplet_1' => $request->input('couplet_1'),
+            'couplet_2' => $request->input('couplet_2'),
+            'couplet_3' => $request->input('couplet_3'),
+            'couplet_4' => $request->input('couplet_4'),
+            'couplet_5' => $request->input('couplet_5')
+        ]);
+        
+        return redirect('/');
     }
 
     /**
@@ -57,7 +72,10 @@ class SongsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $song = Song::find($id);
+        
+        dd($song);
+        return view('songs.create');
     }
 
     /**

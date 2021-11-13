@@ -25,10 +25,10 @@
                             Dashboard
                         </a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-600 underline">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-600 underline hover:no-underline hover:text-red-700">Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-600 underline">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-600 underline hover:no-underline hover:text-red-700">Register</a>
                         @endif
                     @endauth
                 </div>
@@ -39,42 +39,31 @@
             <h1 class="text-center lg:text-4xl sm:text-2xl xs:text-xl uppercase underline font-bold">only beleive songs</h1>
         </div>
 
+        <div class="pt-5 mx-8">
+            <a href="/create" class="text-red-500 border-b-2 border-dotted pb-2">
+                Ajouter une chanson &rarr;
+            </a>
+        </div>
+
         <div class="my-10 grid lg:grid-cols-3 sm:grid-cols-2 gap-x-4 gap-y-8 ">
-            <div class="my-1 mx-4">
-                <span class="font-bold border-dashed border-red-500 border-2 p-2 mx-3 rounded-md">
-                    1.
-                </span>
-                <a href="" class="underline hover:no-underline font-bold">
-                    Ma foi regarde à toi Jesus
-                </a>
-            </div>
-
-            <div class="my-1 mx-4">
-                <span class="font-bold border-dashed border-red-500 border-2 p-2 mx-3 rounded-md">
-                    33.
-                </span>
-                <a href="" class="underline hover:no-underline font-bold">
-                    Rôcher d'âge
-                </a>
-            </div>
-
-            <div class="my-1 mx-4">
-                <span class="font-bold border-dashed border-red-500 border-2 p-2 mx-3 rounded-md">
-                    167.
-                </span>
-                <a href="" class="underline hover:no-underline font-bold">
-                    La vieille croix rugueuse
-                </a>
-            </div>
-            
-            <div class="my-1 mx-4">
-                <span class="font-bold border-dashed border-red-500 border-2 p-2 mx-3 rounded-md">
-                    180.
-                </span>
-                <a href="" class="underline hover:no-underline font-bold">
-                    Plus près de toi
-                </a>
-            </div>
+            @foreach ($songs as $song)
+                <div class="my-1 mx-4">
+                    <div class="float-right">
+                        <a href="/{{ $song->id }}/edit"
+                            class="text-green-500 border-b-2 border-dotted pb-2""
+                            >
+                            Modifier &rarr;
+                        </a>
+                    </div>
+                    
+                    <span class="font-bold border-dashed border-red-500 border-2 p-2 mx-3 rounded-md">
+                        {{ $song->numero }}
+                    </span>
+                    <a href="" class="underline hover:no-underline font-bold">
+                       {{$song->titre}}
+                    </a>
+                </div>
+            @endforeach
         </div>
         
 
