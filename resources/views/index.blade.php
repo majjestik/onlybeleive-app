@@ -21,20 +21,26 @@
             @if (Route::has('login'))
                 <div class="fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-600 underline hover:text-red-700">
+                            Dashboard
+                        </a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-600 underline">Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-600 underline">Register</a>
                         @endif
                     @endauth
                 </div>
             @endif
         </nav>
 
-        <div class="md:mt-10">
+        <div class="md:my-10 sm:my-5">
             <h1 class="text-center lg:text-4xl sm:text-2xl xs:text-xl uppercase underline font-bold">only beleive songs</h1>
+        </div>
+
+        <div class="md:my-10 sm:my-5 w-4/5 m-auto">
+            <a href="" class="underline hover:no-underline font-bold">Ma foi regarde à toi</a>
         </div>
 
         <div class="">
