@@ -18,6 +18,8 @@ use App\Http\Controllers\SongsController;
     return view('index');
 }); */
 
+Route::view('/', 'welcome');
+
 Route::view('/home', 'home')->middleware('auth');
 
 Route::resource('/songs', SongsController::class);

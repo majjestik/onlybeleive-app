@@ -14,7 +14,7 @@ class SongsController extends Controller
      */
     public function index()
     {
-        $songs = Song::all();
+        $songs = Song::orderBy('numero', 'ASC')->get();
         
         return view('songs.index', [
             'songs' => $songs
@@ -61,7 +61,9 @@ class SongsController extends Controller
      */
     public function show($id)
     {
-        //
+        $song = Song::find($id);
+
+        return view('songs.lyrics')->with('song', $song);
     }
 
     /**
@@ -106,8 +108,10 @@ class SongsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Song $song)
     {
-        //
+        $song->delete();
+
+        return redirect('/songs');
     }
 }
