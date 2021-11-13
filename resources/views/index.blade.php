@@ -49,7 +49,7 @@
             @foreach ($songs as $song)
                 <div class="my-1 mx-4">
                     <div class="float-right">
-                        <a href="/{{ $song->id }}/edit"
+                        <a href="{{ route('edit', $song->id) }}"
                             class="text-green-500 border-b-2 border-dotted pb-2""
                             >
                             Modifier &rarr;

@@ -72,10 +72,13 @@ class SongsController extends Controller
      */
     public function edit($id)
     {
-        $song = Song::find($id);
+        // $song = Song::find($id)->first();
         
-        dd($song);
-        return view('songs.create');
+        // return view('songs.edit')->with('song', $song);
+
+        dd($id);
+
+        return view('songs.edit');
     }
 
     /**
