@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body class="bg-yellow-300">
-    <div class="m-auto w-4/5 py-72">
-        <div class="flex flex-wrap justify-center">
+    <div class="m-auto w-4/5">
+        <div class="flex justify-center items-center h-screen">
             <a href="/songs" class="py-3 text-center uppercase w-80 bg-gray-900 text-gray-100">
                 Les Cantiques
             </a>
