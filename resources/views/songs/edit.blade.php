@@ -8,59 +8,60 @@
         </div>
 
         <div class="flex justify-center pt-20">
-            <form action="/" method="POST">
+            <form action="/songs/{{ $song->id }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="block">
                     <input type="number" 
                         name="numero" 
-                        placeholder="Numéro du chant"
-                        class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
+                        value="{{ $song->numero }}"
+                        class="block shadow-5xl mb-10 p-3 w-80 italic" 
                     >
 
                     <input type="text" 
                         name="titre" 
-                        placeholder="Titre..."
-                        class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
+                        value="{{ $song->titre }}"
+                        class="block shadow-5xl mb-10 p-3 w-80 italic" 
                     >
 
                     <input type="text" 
                         name="refrain" 
-                        placeholder="Refrain..."
-                        class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
+                        value="{{ $song->refrain }}"
+                        class="block shadow-5xl mb-10 p-3 w-80 italic" 
                     >
 
                     <input type="text" 
                         name="couplet_1" 
-                        placeholder="Couplet n° 1..."
-                        class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
+                        value="{{ $song->couplet_1 }}"
+                        class="block shadow-5xl mb-10 p-3 w-80 italic" 
                     >
 
                     <input type="text" 
                         name="couplet_2" 
-                        placeholder="Couplet n° 2..."
-                        class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
+                        value="{{ $song->couplet_2 }}"
+                        class="block shadow-5xl mb-10 p-3 w-80 italic" 
                     >
 
                     <input type="text" 
                         name="couplet_3" 
-                        placeholder="Couplet n° 3..."
-                        class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
+                        value="{{ $song->couplet_3 }}"
+                        class="block shadow-5xl mb-10 p-3 w-80 italic" 
                     >
 
                     <input type="text" 
                         name="couplet_4" 
-                        placeholder="Couplet n° 4..."
-                        class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
+                        value="{{ $song->couplet_4 }}"
+                        class="block shadow-5xl mb-10 p-3 w-80 italic" 
                     >
 
                     <input type="text" 
                         name="couplet_5" 
-                        placeholder="Couplet n° 5..."
-                        class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
+                        value="{{ $song->couplet_5 }}"
+                        class="block shadow-5xl mb-10 p-3 w-80 italic" 
                     >
 
                     <button type="submit" class="bg-green-500 block shadow-5xl p-3 mb-10 w-80 uppercase font-bold">
-                        Ajouter
+                        Modifier
                     </button>
                 </div>
             </form>

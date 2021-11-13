@@ -20,4 +20,4 @@ use App\Http\Controllers\SongsController;
 
 Route::view('/home', 'home')->middleware('auth');
 
-Route::resource('/', SongsController::class);
+Route::resource('/songs', SongsController::class);

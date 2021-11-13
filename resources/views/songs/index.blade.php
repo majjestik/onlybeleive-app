@@ -15,7 +15,7 @@
     <body class="antialiased">
         <nav class="relative flex items-top justify-center bg-yellow-300 dark:bg-yellow-700 sm:items-center py-8 font-serif font-bold mb-8">
             <div class="fixed top-0 left-0 px-6 py-4 sm:block">
-                <a href="{{ url('/') }}" class="text-lg text-gray-700">Only Beleive</a>
+                <a href="{{ url('/songs') }}" class="text-lg text-gray-700">Only Beleive</a>
             </div>
 
             @if (Route::has('login'))
@@ -39,24 +39,24 @@
             <h1 class="text-center lg:text-4xl sm:text-2xl xs:text-xl uppercase underline font-bold">only beleive songs</h1>
         </div>
 
-        <div class="pt-5 mx-8">
-            <a href="/create" class="text-red-500 border-b-2 border-dotted pb-2">
+        <div class="pt-5 mx-6">
+            <a href="/songs/create" class="text-red-500 border-b-2 border-dotted pb-2">
                 Ajouter une chanson &rarr;
             </a>
         </div>
 
         <div class="my-10 grid lg:grid-cols-3 sm:grid-cols-2 gap-x-4 gap-y-8 ">
             @foreach ($songs as $song)
-                <div class="my-1 mx-4">
+                <div class="my-1 mx-3">
                     <div class="float-right">
-                        <a href="{{ route('edit', $song->id) }}"
-                            class="text-green-500 border-b-2 border-dotted pb-2""
-                            >
+                        <a href="songs/{{ $song->id }}/edit"
+                            class="text-green-500 border-b-2 border-dotted pb-2"
+                        >
                             Modifier &rarr;
                         </a>
                     </div>
                     
-                    <span class="font-bold border-dashed border-red-500 border-2 p-2 mx-3 rounded-md">
+                    <span class="font-bold border-dashed border-red-500 border-2 p-2 mx-2 rounded-md">
                         {{ $song->numero }}
                     </span>
                     <a href="" class="underline hover:no-underline font-bold">

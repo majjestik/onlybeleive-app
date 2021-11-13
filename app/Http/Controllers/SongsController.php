@@ -16,7 +16,7 @@ class SongsController extends Controller
     {
         $songs = Song::all();
         
-        return view('index', [
+        return view('songs.index', [
             'songs' => $songs
         ]);
     }
@@ -50,7 +50,7 @@ class SongsController extends Controller
             'couplet_5' => $request->input('couplet_5')
         ]);
         
-        return redirect('/');
+        return redirect('/songs');
     }
 
     /**
@@ -72,13 +72,9 @@ class SongsController extends Controller
      */
     public function edit($id)
     {
-        // $song = Song::find($id)->first();
+        $song = Song::find($id);
         
-        // return view('songs.edit')->with('song', $song);
-
-        dd($id);
-
-        return view('songs.edit');
+        return view('songs.edit')->with('song', $song);
     }
 
     /**
@@ -90,7 +86,18 @@ class SongsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $song = Song::where('id', $id)->update([
+            'numero' => $request->input('numero'),
+            'refrain' => $request->input('refrain'),
+            'titre' => $request->input('titre'),
+            'couplet_1' => $request->input('couplet_1'),
+            'couplet_2' => $request->input('couplet_2'),
+            'couplet_3' => $request->input('couplet_3'),
+            'couplet_4' => $request->input('couplet_4'),
+            'couplet_5' => $request->input('couplet_5')
+        ]);
+
+        return redirect('/songs');
     }
 
     /**

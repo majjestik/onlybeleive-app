@@ -1,7 +1,7 @@
 <header class="bg-yellow-300 py-6">
     <div class="container mx-auto flex justify-between items-center px-6">
         <div>
-            <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-700 no-underline hover:text-red-700">
+            <a href="{{ url('/songs') }}" class="text-lg font-semibold text-gray-700 no-underline hover:text-red-700">
                 {{-- {{ config('app.name', 'Laravel') }} --}} Accueil
             </a>
         </div>

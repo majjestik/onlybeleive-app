@@ -8,7 +8,7 @@
         </div>
 
         <div class="flex justify-center pt-20">
-            <form action="/" method="POST">
+            <form action="/songs" method="POST">
                 @csrf
                 <div class="block">
                     <input type="number" 
