@@ -39,13 +39,42 @@
             <h1 class="text-center lg:text-4xl sm:text-2xl xs:text-xl uppercase underline font-bold">only beleive songs</h1>
         </div>
 
-        <div class="md:my-10 sm:my-5 w-4/5 m-auto">
-            <a href="" class="underline hover:no-underline font-bold">Ma foi regarde à toi</a>
-        </div>
+        <div class="my-10 grid lg:grid-cols-3 sm:grid-cols-2 gap-x-4 gap-y-8 ">
+            <div class="my-1 mx-4">
+                <span class="font-bold border-dashed border-red-500 border-2 p-2 mx-3 rounded-md">
+                    1.
+                </span>
+                <a href="" class="underline hover:no-underline font-bold">
+                    Ma foi regarde à toi Jesus
+                </a>
+            </div>
 
-        <div class="">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic commodi aspernatur reiciendis ullam nam, sequi, qui assumenda quisquam harum facere, esse natus illo tenetur. Explicabo dolores temporibus dolore sed?</p>
+            <div class="my-1 mx-4">
+                <span class="font-bold border-dashed border-red-500 border-2 p-2 mx-3 rounded-md">
+                    33.
+                </span>
+                <a href="" class="underline hover:no-underline font-bold">
+                    Rôcher d'âge
+                </a>
+            </div>
 
+            <div class="my-1 mx-4">
+                <span class="font-bold border-dashed border-red-500 border-2 p-2 mx-3 rounded-md">
+                    167.
+                </span>
+                <a href="" class="underline hover:no-underline font-bold">
+                    La vieille croix rugueuse
+                </a>
+            </div>
+            
+            <div class="my-1 mx-4">
+                <span class="font-bold border-dashed border-red-500 border-2 p-2 mx-3 rounded-md">
+                    180.
+                </span>
+                <a href="" class="underline hover:no-underline font-bold">
+                    Plus près de toi
+                </a>
+            </div>
         </div>
         
 
