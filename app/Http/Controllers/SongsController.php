@@ -39,6 +39,13 @@ class SongsController extends Controller
      */
     public function store(Request $request)
     {
+        // If it's valid, it'll display an error
+        $request->validate([
+            'numero' => 'required|integer|min:0|max:230|unique:songs',
+            'titre' => 'required|string|unique:songs'
+        ]);
+
+        // Stores data in DB
         $song = Song::create([
             'numero' => $request->input('numero'),
             'refrain' => $request->input('refrain'),
