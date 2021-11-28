@@ -4,7 +4,7 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class obliger implements Rule
+class Obliger implements Rule
 {
     /**
      * Create a new rule instance.
@@ -25,7 +25,7 @@ class obliger implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+        return empty($value) === $value;
     }
 
     /**
@@ -35,6 +35,6 @@ class obliger implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'Le :attribute du cantique ne peut être vide';
     }
 }

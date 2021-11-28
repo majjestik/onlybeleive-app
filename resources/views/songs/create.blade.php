@@ -23,48 +23,56 @@
                         <input type="number" 
                             name="numero" 
                             placeholder="Numéro du chant"
+                            value="{{ old('numero') }}"
                             class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
                         >
     
                         <input type="text" 
                             name="titre" 
                             placeholder="Titre..."
+                            value="{{ old('titre') }}"
                             class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
                         >
     
                         <input type="text" 
                             name="refrain" 
                             placeholder="Refrain..."
+                            value="{{ old('refrain') }}"
                             class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
                         >
     
                         <input type="text" 
                             name="couplet_1" 
                             placeholder="Couplet n° 1..."
+                            value="{{ old('couplet_1') }}"
                             class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
                         >
     
                         <input type="text" 
                             name="couplet_2" 
                             placeholder="Couplet n° 2..."
+                            value="{{ old('couplet_2') }}"
                             class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
                         >
     
                         <input type="text" 
                             name="couplet_3" 
                             placeholder="Couplet n° 3..."
+                            value="{{ old('couplet_3') }}"
                             class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
                         >
     
                         <input type="text" 
                             name="couplet_4" 
                             placeholder="Couplet n° 4..."
+                            value="{{ old('couplet_4') }}"
                             class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
                         >
     
                         <input type="text" 
                             name="couplet_5" 
                             placeholder="Couplet n° 5..."
+                            value="{{ old('couplet_5') }}"
                             class="block shadow-5xl mb-10 p-3 w-80 italic placeholder-gray-400" 
                         >
     
