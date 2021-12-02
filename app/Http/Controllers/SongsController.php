@@ -13,6 +13,13 @@ class SongsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    // To exclude routes from "auth" middleware
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     public function index()
     {
         $songs = Song::orderBy('numero', 'ASC')->get();

@@ -25,7 +25,11 @@
                             Dashboard
                         </a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-600 underline hover:no-underline hover:text-red-700">Log in</a>
+                        <a href="{{ route('login') }}" 
+                            class="text-sm text-gray-700 dark:text-gray-600 underline hover:no-underline hover:text-red-700"
+                        >
+                            Login
+                        </a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-600 underline hover:no-underline hover:text-red-700">Register</a>
@@ -38,35 +42,44 @@
         <div class="md:my-10 sm:my-5">
             <h1 class="text-center lg:text-4xl sm:text-2xl xs:text-xl uppercase underline font-bold">only beleive songs</h1>
         </div>
-
-        <div class="pt-5 mx-6">
-            <a href="/songs/create" 
-                class="text-red-500 hover:text-red-800 border-b-2 border-dotted pb-2"
-            >
-                Ajouter une chanson &rarr;
-            </a>
-        </div>
+        @if (Auth::user())
+            <div class="pt-5 mx-6">
+                <a href="/songs/create" 
+                    class="text-red-500 hover:text-red-800 border-b-2 border-dotted pb-2"
+                >
+                    Ajouter une chanson &rarr;
+                </a>
+            </div>
+        @else
+            <p class="pt-3 px-5 font-bold text-red-600 italic">
+                Se connecter pour ajouter un cantique !
+            </p>
+        @endif
+        
 
         <div class="my-10 grid lg:grid-cols-3 sm:grid-cols-2 gap-x-4 gap-y-8 ">
             @foreach ($songs as $song)
                 <div class="my-1 mx-3">
-                    <div class="float-right">
-                        <a href="songs/{{ $song->id }}/edit"
-                            class="text-green-500 hover:text-green-800 border-b-2 border-dotted pb-2"
-                        >
-                            Modifier &rarr;
-                        </a>
-                        
-                        <form action="/songs/{{ $song->id }}" method="POST" class="pt-3">
-                            @csrf
-                            @method('delete')
-                            <button type="submit"
-                                class="text-red-500 hover:text-red-800 border-b-2 border-dotted pb-2"
+                    @if (isset(Auth::user()->id))
+                        <div class="float-right">
+                            <a href="songs/{{ $song->id }}/edit"
+                                class="text-green-500 hover:text-green-800 border-b-2 border-dotted pb-2"
                             >
-                                Supprimer &rarr;
-                            </button>
-                        </form>
-                    </div>
+                                Modifier &rarr;
+                            </a>
+                            
+                            <form action="/songs/{{ $song->id }}" method="POST" class="pt-3">
+                                @csrf
+                                @method('delete')
+                                <button type="submit"
+                                    class="text-red-500 hover:text-red-800 border-b-2 border-dotted pb-2"
+                                >
+                                    Supprimer &rarr;
+                                </button>
+                            </form>
+                        </div>
+                    @endif
+                    
                     
                     <span class="font-bold border-dashed border-red-500 border-2 p-2 mx-2 rounded-md">
                         {{ $song->numero }}
