@@ -6,10 +6,31 @@
             </a>
         </div>
         <nav class="space-x-4 text-gray-700 text-sm sm:text-base font-bold">
+            {{-- 
+                - Inside the @guest, i placed an @if condition to check if the url is 
+                  login or register in order to avoid having both routes links in both pages 
+                     
+            --}}
             @guest
-                <a class="underline hover:no-underline hover:text-red-700" href="{{ route('login') }}">{{ __('Se Connecter') }}</a>
-                @if (Route::has('register'))
-                    <a class="underline hover:no-underline hover:text-red-700" href="{{ route('register') }}">{{ __('S\'inscrire') }}</a>
+                @if (\Route::current()->getName() == 'login')
+                    @if (Route::has('register'))
+                        <a class="underline hover:no-underline hover:text-red-700" href="{{ route('register') }}">{{ __('S\'inscrire') }}</a>
+                    @endif
+                @elseif (\Route::current()->getName() == 'register')
+                    <a class="underline hover:no-underline hover:text-red-700" 
+                        href="{{ route('login') }}"
+                    >
+                        {{ __('Se Connecter') }}
+                    </a>
+                @else
+                    <a class="underline hover:no-underline hover:text-red-700" 
+                        href="{{ route('login') }}"
+                    >
+                        {{ __('Se Connecter') }}
+                    </a>
+                    @if (Route::has('register'))
+                        <a class="underline hover:no-underline hover:text-red-700" href="{{ route('register') }}">{{ __('S\'inscrire') }}</a>
+                    @endif
                 @endif
             @else
                 <span>{{ Auth::user()->name }}</span>
