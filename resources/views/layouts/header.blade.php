@@ -7,9 +7,9 @@
         </div>
         <nav class="space-x-4 text-gray-700 text-sm sm:text-base font-bold">
             @guest
-                <a class="underline hover:no-underline hover:text-red-700" href="{{ route('login') }}">{{ __('Login') }}</a>
+                <a class="underline hover:no-underline hover:text-red-700" href="{{ route('login') }}">{{ __('Se Connecter') }}</a>
                 @if (Route::has('register'))
-                    <a class="underline hover:no-underline hover:text-red-700" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <a class="underline hover:no-underline hover:text-red-700" href="{{ route('register') }}">{{ __('S\'inscrire') }}</a>
                 @endif
             @else
                 <span>{{ Auth::user()->name }}</span>

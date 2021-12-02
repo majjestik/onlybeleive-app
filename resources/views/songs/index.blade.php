@@ -28,11 +28,15 @@
                         <a href="{{ route('login') }}" 
                             class="text-sm text-gray-700 dark:text-gray-600 underline hover:no-underline hover:text-red-700"
                         >
-                            Login
+                            Se Connecter
                         </a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-600 underline hover:no-underline hover:text-red-700">Register</a>
+                            <a href="{{ route('register') }}" 
+                                class="ml-4 text-sm text-gray-700 dark:text-gray-600 underline hover:no-underline hover:text-red-700"
+                            >
+                                S'inscrire
+                            </a>
                         @endif
                     @endauth
                 </div>
