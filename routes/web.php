@@ -20,6 +20,6 @@ use App\Http\Controllers\SongsController;
 
 Route::view('/', 'welcome');
 
-//Route::view('/home', 'home')->middleware('auth');
+Route::view('/home', 'home')->middleware('auth');
 
 Route::resource('/songs', SongsController::class);

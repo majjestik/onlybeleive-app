@@ -18,6 +18,17 @@
                 <a href="{{ url('/') }}" class="text-lg text-gray-700">Only Beleive</a>
             </div>
 
+            <div class="flex justify-between fixed top-0 py-3 hidden-xs">
+                <form action=""  class="relative flex items-center">
+                    <x-heroicon-o-search class="w-5 h-5 absolute ml-3 pointer-events-none"/>
+
+                    <input type="text" placeholder="Rechercher..."
+                        class="font-semibold w-80 py-2 pl-10 pr-5 rounded-2xl bg-gray-900 
+                            bg-opacity-10 placeholder-gray-500 ring-1 ring-yellow-200"
+                    >
+                </form>
+            </div>
+
             @if (Route::has('login'))
                 <div class="fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
