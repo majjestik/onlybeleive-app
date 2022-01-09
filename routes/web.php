@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SongsController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +22,7 @@ use App\Http\Controllers\SongsController;
 Route::view('/', 'welcome');
 
 Route::view('/home', 'home')->middleware('auth');
+
+Route::get('/search', [SearchController::class, 'search'])->name('web.search');
 
 Route::resource('/songs', SongsController::class);

@@ -17,7 +17,7 @@ class SongsController extends Controller
     // To exclude routes from "auth" middleware
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth')->except(['index', 'show', 'search']);
     }
 
     public function index()
@@ -132,4 +132,13 @@ class SongsController extends Controller
 
         return redirect('/songs');
     }
+
+    /* public function search(Request $request)
+    {
+        // $search = $request->get('search');
+        // $song = Song::where('titre', 'LIKE', '%'. $search .'%' )->get();
+
+        // return view('songs.search')->with('song', $song);
+        Route::view('/songs.search');
+    } */
 }
