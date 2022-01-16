@@ -11,10 +11,14 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
     <body class="antialiased">
+
+        @include('layouts.navbar')
+
         <nav class="relative flex items-top justify-center bg-yellow-300 dark:bg-yellow-700
-            sm:items-center py-8 font-serif font-bold mb-8"
+            sm:items-center py-8 font-serif font-bold mb-8 invisible"
         >
             <div class="fixed top-0 left-0 px-6 py-4 sm:block">
                 <a href="{{ url('/') }}" class="text-lg text-gray-700">Only Beleive</a>
@@ -120,5 +124,8 @@
         
 
         @include('layouts.footer')
+
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/style.js') }}"></script>
     </body>
 </html>
