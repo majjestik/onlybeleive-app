@@ -11,9 +11,12 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
     <body class="antialiased">
-        <nav class="relative flex items-top justify-center bg-yellow-300 dark:bg-yellow-700
+        @include('layouts.navbar')
+
+        <nav class="hidden relative flex items-top justify-center bg-yellow-300 dark:bg-yellow-700
             sm:items-center py-8 font-serif font-bold mb-8"
         >
             <div class="fixed top-0 left-0 px-6 py-4 sm:block">
@@ -65,7 +68,7 @@
             @endif
         </nav>
 
-        <div class="md:my-10 sm:my-5">
+        <div class="md:my-10 my-5">
             <h1 class="text-center lg:text-4xl sm:text-2xl xs:text-xl uppercase underline font-bold">Recherches</h1>
         </div>
 
@@ -97,5 +100,8 @@
         
 
         @include('layouts.footer')
+
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('js/style.js') }}"></script>
     </body>
 </html>

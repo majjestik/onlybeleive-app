@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="m-auto w-4/8 py-8">
-        <div class="md:my-8 sm:my-5">
+        <div class="md:my-8 my-5">
             <h1 class="text-center lg:text-4xl sm:text-2xl xs:text-xl uppercase underline font-bold">Ajouter un cantique</h1>
         </div>
 

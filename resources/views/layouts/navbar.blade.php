@@ -1,7 +1,26 @@
 <nav class="flex items-center flex-wrap p-3 sm:py-2 lg:py-2 bg-yellow-300 
-    dark:bg-yellow-700 font-bold"
+    dark:bg-yellow-700 font-bold md:grid md:grid-cols-3"
 >
     <a href="{{ url('/') }}" class="text-lg text-gray-700 tracking-wide">Only Beleive</a>
+
+    <div class="hidden md:inline-block">
+        <form action="{{ route('web.search') }}" method="GET" 
+            class="relative flex items-center lg:py-0 lg:pr-20"
+        >
+            @csrf
+
+            <button type="submit" name="submit" 
+                class="w-5 h-5 absolute ml-3 cursor-pointer"
+            >
+                <x-heroicon-o-search />
+            </button>
+
+            <input type="text" placeholder="Rechercher..." name="query"
+                class="font-semibold w-80 py-2 pl-10 pr-5 rounded-2xl bg-gray-900 
+                    bg-opacity-10 placeholder-gray-500 ring-1 ring-yellow-200"
+            />
+        </form>
+    </div>
 
     <button 
         class="w-6 h-6 inline-flex hover:text-red-600 rounded lg:hidden 
@@ -17,7 +36,7 @@
     >
         <div class="lg:inline-flex lg:flex-row lg:ml-auto flex flex-col">
             <form action="{{ route('web.search') }}" method="GET" 
-                class="relative flex items-center lg:py-0 py-3 lg:pr-20"
+                class="relative flex items-center lg:py-0 py-3 lg:pr-20 md:hidden"
             >
                 @csrf
 
